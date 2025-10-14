@@ -1,13 +1,12 @@
 #' A Table Function
 #'
-#' This function creates a table with percentage formatting and totals using 
+#' This function creates a table with percentage formatting and totals using
 #' functions from the janitor package
 #' @param x Your vector or data frame column
 #' @keywords table
-#' @export
 #' @examples
 #' tabyl_tpct()
-
+#' @export
 tabyl_tpct <- function(x){
   janitor::tabyl(x) %>%
     janitor::adorn_pct_formatting() %>%

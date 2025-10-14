@@ -9,7 +9,7 @@
 #' year, based on the values in `admission_col`, while allowing for minor
 #' deviations or outliers. If the 10% and 90% year quantiles and median are
 #' identical, the function proceeds with that year; otherwise, it also proceeds
-#' butissues a warning message.
+#' but issues a warning message.
 #'
 #' It then generates an hourly sequence for the identified year, performs a
 #' cross join with the distinct unit codes, and calculates the number of
@@ -24,9 +24,10 @@
 #'
 #' @return
 #' A tibble with columns:
+#'
 #' * `unit_code` (or the column provided in `unit_col`),
-#' * `Hour` — hourly timestamps for the representative year,
-#' * `n_patients` — number of patients in each unit at that hour.
+#' * `Hour` - hourly timestamps for the representative year,
+#' * `n_patients` - number of patients in each unit at that hour.
 #'
 #' @examples
 #' \dontrun{
@@ -35,7 +36,6 @@
 #' }
 #'
 #' @export
-
 compute_hourly_occupancy <- function(
     data,
     unit_col = unit_code,
