@@ -95,11 +95,11 @@ compute_hourly_occupancy <- function(
   result <- expanded_tbl |>
     dplyr::mutate(
       n_patients = purrr::map2_int(
-        Hour, {{ unit_col }},
+        Hour, .data[[unit_col_name]],
         ~ sum(
           data[[admission_col_name]] < .x &
             data[[discharge_col_name]] > .x &
-            data[[unit_col_name]] == .y,
+            as.character(data[[unit_col_name]]) == as.character(.y),
           na.rm = TRUE
         )
       )

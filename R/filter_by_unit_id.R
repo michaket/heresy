@@ -21,7 +21,7 @@
 #' by the string provided via `suffix` (default: `"_filtered"`).
 #'
 #' @param MB,MP,PH,PB,FM Data frames containing ANQ Psychiatry data.
-#'   Each corresponds to a specific dataset type (e.g., MB = main baseline, MP = main post, etc.).
+#'   Each corresponds to a specific dataset type.
 #'   You may provide any subset of these arguments.
 #' @param unit_ids A vector of unit identifiers to keep or remove.
 #' @param unit_col A bare (unquoted) column name identifying the unit variable
