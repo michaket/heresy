@@ -89,7 +89,7 @@ compute_hourly_occupancy <- function(
     dplyr::select({{ unit_col }}) |>
     dplyr::distinct()
 
-  expanded_tbl <- tidyr::cross_join(units_tbl, hours_tbl)
+  expanded_tbl <- dplyr::cross_join(units_tbl, hours_tbl)
 
   # --- Step 4: Compute hourly patient occupancy ------------------------------
   result <- expanded_tbl |>
